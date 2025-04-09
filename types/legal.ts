@@ -39,7 +39,7 @@ export type Article = {
   article: string;
   header: string;
   content: string;
-  listOfFacts?: string[]; // ✅ Tambahan
+  listOfFacts?: string[];
   children?: Paragraph[];
 };
 
