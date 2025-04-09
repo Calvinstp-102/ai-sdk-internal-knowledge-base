@@ -43,9 +43,15 @@ async function ekstrakJudul(teks: string) {
 // }
 
 async function ekstrakBatangTubuh(teks: string) {
-  const regex = /(BAB I.*?)\nPENJELASAN\s*\n/s;
-  const match = teks.match(regex);
+  let regex = /(BAB I.*?)\nPENJELASAN\s*\n/s;
+  let match = teks.match(regex);
 
+  if (!match) {
+    regex = /(BAB I.*?)$/s;
+  }
+
+  match = teks.match(regex);
+  
   if (match && match[1]) {
     return match[1].trim();
   }
