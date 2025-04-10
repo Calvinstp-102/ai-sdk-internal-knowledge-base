@@ -160,8 +160,8 @@ export async function parseLegalDocument(
 
   const penjelasan = ekstrakPenjelasan(content);
 
-  let articleBatangTubuh = [];
-  let articlePenjelasan = [];
+  let articleBatangTubuh: Article[] = [];
+  let articlePenjelasan: Article[] = [];
 
   if (tipeDokumen === "PERUBAHAN") {
     articleBatangTubuh = await pisahPasalPerubahan(
