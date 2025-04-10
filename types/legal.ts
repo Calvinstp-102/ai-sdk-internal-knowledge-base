@@ -48,8 +48,17 @@ export type LegalBody = {
   children: Article[];
 };
 
+export type LegalHead = {
+  title: string;
+  menimbang: string;
+  mengingat: string;
+  menetapkan: string;
+  type: "PERUBAHAN" | "PENETAPAN" | "PENCABUTAN";
+};
+
 export type LegalDocument = {
   title: string;
+  head: LegalHead; // ✅ tambahkan ini
   considerations?: any;
   considering?: any;
   decides?: any;
